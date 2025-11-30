@@ -14,13 +14,6 @@ namespace NLEngine
 
 	class CClassBase;
 
-	struct TestStruct
-	{
-		int t1;
-		int t2;
-		static float ttt;
-	};
-
 	class CMemberVariableBase : public CClassMember
 	{
 	public:

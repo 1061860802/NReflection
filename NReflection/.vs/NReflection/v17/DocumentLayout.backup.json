@@ -1,0 +1,389 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\cpp\\NReflection\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionExe\\private\\NReflectionExe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionExe\\private\\NReflectionExe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\StaticFunction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\StaticFunction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\MemberFunction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\MemberFunction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\optional||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Variable_traits.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\Variable_traits.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Any.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\Any.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\TypeFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\TypeFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\vcruntime\\exe_common.inl||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\ClassBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\ClassBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Class.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\Class.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\ClassFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\ClassFactory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\private\\EnumBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\private\\EnumBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\EnumBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\EnumBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Array.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\Array.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Mini\\install\\include\\NReflectionCore\\public\\Type.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Mini\\install\\include\\NReflectionCore\\public\\Type.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\install\\include\\NReflectionCore\\public\\Type.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:install\\include\\NReflectionCore\\public\\Type.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\install\\include\\NReflectionCore\\public\\StaticFunction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:install\\include\\NReflectionCore\\public\\StaticFunction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\BaseNumeric.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\BaseNumeric.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Enumerator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\Enumerator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\ClassMember.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\ClassMember.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Enum.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Source\\NReflectionCore\\public\\Enum.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 112,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 288,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StaticFunction.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\StaticFunction.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\StaticFunction.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\StaticFunction.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\StaticFunction.h",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAwJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T12:04:12.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MemberFunction.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\MemberFunction.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\MemberFunction.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\MemberFunction.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\MemberFunction.h",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAAwMcAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T10:24:43.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Variable_traits.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Variable_traits.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\Variable_traits.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Variable_traits.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\Variable_traits.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T11:30:38.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "optional",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\optional",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\optional",
+              "ViewState": "AgIAADoAAAAAAAAAAAAYwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-30T11:27:11.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TypeFactory.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\TypeFactory.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\TypeFactory.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\TypeFactory.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\TypeFactory.h",
+              "ViewState": "AgIAACYAAAAAAAAAAAAlwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:59:48.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NReflectionExe.cpp",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionExe\\private\\NReflectionExe.cpp",
+              "RelativeDocumentMoniker": "Source\\NReflectionExe\\private\\NReflectionExe.cpp",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionExe\\private\\NReflectionExe.cpp",
+              "RelativeToolTip": "Source\\NReflectionExe\\private\\NReflectionExe.cpp",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAAwAcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-30T08:25:49.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Class.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Class.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\Class.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Class.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\Class.h",
+              "ViewState": "AgIAADIBAAAAAAAAAAAswPkAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:26:26.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ClassFactory.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\ClassFactory.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\ClassFactory.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\ClassFactory.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\ClassFactory.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:26:28.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Any.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Any.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\Any.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Any.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\Any.h",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwDoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:30:43.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "exe_common.inl",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\vcruntime\\exe_common.inl",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\vcruntime\\exe_common.inl",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAwE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-11-30T08:55:29.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ClassBase.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\ClassBase.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\ClassBase.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\ClassBase.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\ClassBase.h",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:26:14.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BaseNumeric.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\BaseNumeric.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\BaseNumeric.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\BaseNumeric.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\BaseNumeric.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:30:50.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EnumBase.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\EnumBase.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\EnumBase.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\EnumBase.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\EnumBase.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:25:43.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EnumBase.cpp",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\private\\EnumBase.cpp",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\private\\EnumBase.cpp",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\private\\EnumBase.cpp",
+              "RelativeToolTip": "Source\\NReflectionCore\\private\\EnumBase.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-30T08:26:49.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Type.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\install\\include\\NReflectionCore\\public\\Type.h",
+              "RelativeDocumentMoniker": "install\\include\\NReflectionCore\\public\\Type.h",
+              "ToolTip": "D:\\cpp\\NReflection\\install\\include\\NReflectionCore\\public\\Type.h",
+              "RelativeToolTip": "install\\include\\NReflectionCore\\public\\Type.h",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAtwCcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:34:49.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Array.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Array.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\Array.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Array.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\Array.h",
+              "ViewState": "AgIAACsAAAAAAAAAAAAtwDsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:30:50.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StaticFunction.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\install\\include\\NReflectionCore\\public\\StaticFunction.h",
+              "RelativeDocumentMoniker": "install\\include\\NReflectionCore\\public\\StaticFunction.h",
+              "ToolTip": "D:\\cpp\\NReflection\\install\\include\\NReflectionCore\\public\\StaticFunction.h",
+              "RelativeToolTip": "install\\include\\NReflectionCore\\public\\StaticFunction.h",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAtwIcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:34:09.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Type.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Mini\\install\\include\\NReflectionCore\\public\\Type.h",
+              "RelativeDocumentMoniker": "Mini\\install\\include\\NReflectionCore\\public\\Type.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Mini\\install\\include\\NReflectionCore\\public\\Type.h",
+              "RelativeToolTip": "Mini\\install\\include\\NReflectionCore\\public\\Type.h",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAtwL4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:36:00.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Enumerator.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Enumerator.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\Enumerator.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Enumerator.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\Enumerator.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:26:33.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ClassMember.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\ClassMember.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\ClassMember.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\ClassMember.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\ClassMember.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:26:29.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Enum.h",
+              "DocumentMoniker": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Enum.h",
+              "RelativeDocumentMoniker": "Source\\NReflectionCore\\public\\Enum.h",
+              "ToolTip": "D:\\cpp\\NReflection\\Source\\NReflectionCore\\public\\Enum.h",
+              "RelativeToolTip": "Source\\NReflectionCore\\public\\Enum.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-30T08:25:35.747Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

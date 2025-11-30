@@ -167,10 +167,32 @@ namespace NLEngine
 			return false;
 		};
 		template<typename Ret_T, typename T, typename... Params>
-		std::optional<Ret_T> CallFuncWithRet(T* Caller, Params&&... args) const
+		std::optional<typename VReflectionTraits::remove_reference<typename Ret_T>::refToPtr> CallFuncWithRet(T* Caller, Params&&... args) const
+			/*
+			 * Calls a reflected function and returns its result wrapped in optional.
+			 *
+			 * IMPORTANT REFERENCE HANDLING:
+			 * - If Ret_T is a reference type, it will be converted to pointer in return
+			 * - This is because std::optional cannot contain reference types
+			 * - Caller must still specify Ret_T as reference (e.g., int&) for type matching
+			 * - But actual return will be optional containing pointer (e.g., std::optional<int*>)
+			 *
+			 * @tparam Ret_T Expected return type (use reference if function returns reference)
+			 * @tparam T Type of object containing the function
+			 * @tparam Params Parameter types for the function
+			 *
+			 * @param Caller Object instance to call the function on
+			 * @param args Arguments to pass to the function
+			 *
+			 * @return std::optional containing:
+			 *         - Pointer if Ret_T is reference (due to optional reference limitation)
+			 *         - Direct value if Ret_T is not reference
+			 *         - std::nullopt if call fails
+			 */
 		{
+			using RealRet_ = typename VReflectionTraits::remove_reference<typename Ret_T>::refToPtr;
 			CClassBase* realType = static_cast<CClassBase*>(GetObjRealType(Caller));
-			void* realPtr = realType->CastFromParent(&::GetType<T>(), Caller);
+			void* realPtr = realType->CastFromParent(&NLEngine::GetType<T>(), Caller);
 			if (realPtr == nullptr)
 			{
 				return std::nullopt;
@@ -183,11 +205,23 @@ namespace NLEngine
 			auto valRet = CallFuncAny(Ptr, { args ... });
 			if (valRet)
 			{
-				return (Ret_T)valRet.value();
+				if (&valRet->GetValType().GetTypeConst() == GetStaticType<Ret_T>())
+				{
+					if constexpr (VReflectionTraits::remove_reference<typename Ret_T>::is_reference)
+					{
+						return (RealRet_)valRet->GetValue();
+					}
+					else
+					{
+						return *(RealRet_*)valRet->GetValue();
+					}
+				}
+				return std::nullopt;
 			}
 			return std::nullopt;
 		};
 		virtual std::optional<CAny> CallFuncAny(void* Caller, const std::vector<AnyRef>& Params) const = 0;
+		virtual std::optional<CAny> CallFuncAny(const AnyRef& Caller, const std::vector<AnyRef>& Params) const = 0;
 		virtual std::string prints() const = 0;
 	protected:
 		const CClassBase* OwnerClass_;
@@ -219,6 +253,24 @@ namespace NLEngine
 		{
 			if (Params.size() != Type_.GetParams().size()) return std::nullopt;
 			class_* CallerPtr = (class_*)Caller;
+			for (size_t i = 0; i < Type_.GetParams().size(); i++)
+			{
+				if (!(Type_.GetParams()[i].InputRequire(Params[i].GetValType())))
+				{
+					std::cout << "实参" << std::string(Params[i].GetValType()) << "与形参" << std::string(Type_.GetParams()[i]) << "不兼容" << std::endl;
+					return std::nullopt;
+				}
+			}
+			return CallFuncAnyImp(*CallerPtr, Params, std::make_index_sequence<std::tuple_size_v<param_>>());
+		}
+		virtual std::optional<CAny> CallFuncAny(const AnyRef& Caller, const std::vector<AnyRef>& Params) const override
+		{
+			if (Params.size() != Type_.GetParams().size()) return std::nullopt;
+			const CClassBase* InCallerType = dynamic_cast<const CClassBase*>(&Caller.GetValType().GetTypeConst());
+			if (InCallerType == nullptr) return std::nullopt;
+			void* Ptr = InCallerType->CastToParent(static_cast<const CClassBase*>(&Type_.GetTargetClass().GetTypeConst()), Caller.GetValue());
+			if (Ptr == nullptr) return std::nullopt;
+			class_* CallerPtr = (class_*)Ptr;
 			for (size_t i = 0; i < Type_.GetParams().size(); i++)
 			{
 				if (!(Type_.GetParams()[i].InputRequire(Params[i].GetValType())))
@@ -263,6 +315,21 @@ namespace NLEngine
 		using Ret_ = typename Ret;
 		virtual ~TMemberFunctionContainerConst() {};
 		TMemberFunctionContainerConst(Ret(TClass::* FuncPtr_)(Params...) const, const CClassBase* OwnerClass, const CMemberFunctionBase& CType, const std::string& Name) :FuncPtr_(FuncPtr_), CMemberFunctionContainerBase(CType, Name, OwnerClass) {}
+		TMemberFunctionContainerConst(Ret(TClass::* FuncPtr_)(Params...) const, const CClassBase* OwnerClass, const CMemberFunctionBase& CType, const std::string& Name, const std::vector<CMemberFunctionMetaBase*>& IN_Metas) :FuncPtr_(FuncPtr_), CMemberFunctionContainerBase(CType, Name, OwnerClass, IN_Metas) {}
+		virtual std::optional<CAny> CallFuncAny(void* Caller, const std::vector<AnyRef>& Params) const override
+		{
+			if (Params.size() != Type_.GetParams().size()) return std::nullopt;
+			class_* CallerPtr = (class_*)Caller;
+			for (size_t i = 0; i < Type_.GetParams().size(); i++)
+			{
+				if (!(Type_.GetParams()[i].InputRequire(Params[i].GetValType())))
+				{
+					std::cout << "实参" << std::string(Params[i].GetValType()) << "与形参" << std::string(Type_.GetParams()[i]) << "不兼容" << std::endl;
+					return std::nullopt;
+				}
+			}
+			return CallFuncAnyImp(*CallerPtr, Params, std::make_index_sequence<std::tuple_size_v<param_>>());
+		}
 		virtual std::optional<CAny> CallFuncAny(const AnyRef& Caller, const std::vector<AnyRef>& Params) const override
 		{
 			if (Params.size() != Type_.GetParams().size()) return std::nullopt;
@@ -312,5 +379,4 @@ namespace NLEngine
 			}
 		};
 	};
-
 }

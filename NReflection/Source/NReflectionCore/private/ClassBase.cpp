@@ -6,6 +6,26 @@
 
 using namespace NLEngine;
 
+void CClassInfoBase::PostConstructorProcess()
+{
+	for (auto i : MemberVariable_)
+	{
+		MemberVariableMap_.emplace(i->GetName(), i);
+	}
+	for (auto i : StaticVariable_)
+	{
+		StaticVariableMap_.emplace(i->GetName(), i);
+	}
+	for (auto i : MemberFunc_)
+	{
+		MemberFuncMap_.emplace(i->GetName(), i);
+	}
+	for (auto i : StaticFunc_)
+	{
+		StaticFuncMap_.emplace(i->GetName(), i);
+	}
+}
+
 CClassInfoBase::~CClassInfoBase()
 {
 	for (auto i = ParentClasses_.begin(); i != ParentClasses_.end(); i++)
@@ -93,12 +113,10 @@ const std::vector<CStaticFunctionContainerBase*> CClassBase::GetOwnStaticFunctio
 
 CMemberVariableBase* CClassBase::GetMemberVariable(const std::string& Name) const
 {
-	for (size_t i = 0; i < Info->MemberVariable_.size(); i++)
+	auto tmp = Info->MemberVariableMap_.find(Name);
+	if (tmp != Info->MemberVariableMap_.end())
 	{
-		if (Info->MemberVariable_[i]->GetName() == Name)
-		{
-			return Info->MemberVariable_[i];
-		}
+		return tmp->second;
 	}
 	for (size_t i = 0; i < Info->DirectParentClasses_.size(); i++)
 	{
@@ -113,12 +131,10 @@ CMemberVariableBase* CClassBase::GetMemberVariable(const std::string& Name) cons
 
 CStaticVariableBase* CClassBase::GetStaticVariable(const std::string& Name) const
 {
-	for (size_t i = 0; i < Info->StaticVariable_.size(); i++)
+	auto tmp = Info->StaticVariableMap_.find(Name);
+	if (tmp != Info->StaticVariableMap_.end())
 	{
-		if (Info->StaticVariable_[i]->GetName() == Name)
-		{
-			return Info->StaticVariable_[i];
-		}
+		return tmp->second;
 	}
 	for (size_t i = 0; i < Info->DirectParentClasses_.size(); i++)
 	{
@@ -133,12 +149,10 @@ CStaticVariableBase* CClassBase::GetStaticVariable(const std::string& Name) cons
 
 CMemberFunctionContainerBase* CClassBase::GetMemberFunction(const std::string& Name) const
 {
-	for (size_t i = 0; i < Info->MemberFunc_.size(); i++)
+	auto tmp = Info->MemberFuncMap_.find(Name);
+	if (tmp != Info->MemberFuncMap_.end())
 	{
-		if (Info->MemberFunc_[i]->GetName() == Name)
-		{
-			return Info->MemberFunc_[i];
-		}
+		return tmp->second;
 	}
 	for (size_t i = 0; i < Info->DirectParentClasses_.size(); i++)
 	{
@@ -153,12 +167,10 @@ CMemberFunctionContainerBase* CClassBase::GetMemberFunction(const std::string& N
 
 CStaticFunctionContainerBase* CClassBase::GetStaticFunction(const std::string& Name) const
 {
-	for (size_t i = 0; i < Info->StaticFunc_.size(); i++)
+	auto tmp = Info->StaticFuncMap_.find(Name);
+	if (tmp != Info->StaticFuncMap_.end())
 	{
-		if (Info->StaticFunc_[i]->GetName() == Name)
-		{
-			return Info->StaticFunc_[i];
-		}
+		return tmp->second;
 	}
 	for (size_t i = 0; i < Info->DirectParentClasses_.size(); i++)
 	{

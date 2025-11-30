@@ -123,12 +123,45 @@ namespace NLEngine
 			return false;
 		};
 		template<typename Ret_T, typename... Params>
-		std::optional<Ret_T> CallFunc(Params&&... args) const
+		std::optional<typename VReflectionTraits::remove_reference<typename Ret_T>::refToPtr> CallFuncWithRet(Params&&... args) const
+			/*
+			 * Calls a reflected function and returns its result wrapped in optional.
+			 *
+			 * IMPORTANT REFERENCE HANDLING:
+			 * - If Ret_T is a reference type, it will be converted to pointer in return
+			 * - This is because std::optional cannot contain reference types
+			 * - Caller must still specify Ret_T as reference (e.g., int&) for type matching
+			 * - But actual return will be optional containing pointer (e.g., std::optional<int*>)
+			 *
+			 * @tparam Ret_T Expected return type (use reference if function returns reference)
+			 * @tparam T Type of object containing the function
+			 * @tparam Params Parameter types for the function
+			 *
+			 * @param Caller Object instance to call the function on
+			 * @param args Arguments to pass to the function
+			 *
+			 * @return std::optional containing:
+			 *         - Pointer if Ret_T is reference (due to optional reference limitation)
+			 *         - Direct value if Ret_T is not reference
+			 *         - std::nullopt if call fails
+			 */
 		{
+			using RealRet_ = typename VReflectionTraits::remove_reference<typename Ret_T>::refToPtr;
 			auto valRet = CallFuncAny({ args ... });
 			if (valRet)
 			{
-				return (Ret_T)valRet.value();
+				if (&valRet->GetValType().GetTypeConst() == GetStaticType<Ret_T>())
+				{
+					if constexpr (VReflectionTraits::remove_reference<typename Ret_T>::is_reference)
+					{
+						return (RealRet_)valRet->GetValue();
+					}
+					else
+					{
+						return *(RealRet_*)valRet->GetValue();
+					}
+				}
+				return std::nullopt;
 			}
 			return std::nullopt;
 		};
@@ -154,10 +187,16 @@ namespace NLEngine
 		TStaticFunctionContainer(Ret(*FuncPtr_)(Params...), const CClassBase* OwnerClass, const FStaticFunctionBase& CType, const std::string& Name, const std::vector<CStaticFunctionMetaBase*>& IN_Metas) :FuncPtr_(FuncPtr_), CStaticFunctionContainerBase(OwnerClass, CType, Name, IN_Metas) {}
 		virtual std::optional<CAny> CallFuncAny(const std::vector<AnyRef>& Params) const override
 		{
-			if (Params.size() != Type_.GetParams().size()) return std::nullopt;
+			if (Params.size() != Type_.GetParams().size())
+			{
+				return std::nullopt;
+			}
 			for (size_t i = 0; i < Type_.GetParams().size(); i++)
 			{
-				if (!(Type_.GetParams()[i].InputRequire(Params[i].GetValType()))) return std::nullopt;
+				if (!(Type_.GetParams()[i].InputRequire(Params[i].GetValType())))
+				{
+					return std::nullopt;
+				}
 			}
 			return CallFuncAnyImp(Params, std::make_index_sequence<std::tuple_size_v<param_>>());
 		}

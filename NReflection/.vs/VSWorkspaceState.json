@@ -1,0 +1,22 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "Local Machine": [
+      "build\\debug",
+      "build\\development",
+      "build\\release",
+      "build\\mini"
+    ]
+  },
+  "ExpandedNodes": [
+    "",
+    "\\Source",
+    "\\Source\\NReflectionCore",
+    "\\Source\\NReflectionCore\\private",
+    "\\Source\\NReflectionCore\\public",
+    "\\Source\\NReflectionExe",
+    "\\Source\\NReflectionExe\\private",
+    "\\Source\\NReflectionExe\\public"
+  ],
+  "SelectedNode": "\\Source\\NReflectionCore\\public\\StaticFunction.h",
+  "PreviewInSolutionExplorer": false
+}

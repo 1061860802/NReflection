@@ -10,6 +10,7 @@ namespace NLEngine
 		struct remove_reference
 		{
 			using type = typename T;
+			using refToPtr = typename T;
 			static constexpr bool is_reference = false;
 			static constexpr bool is_lref = false;
 			static constexpr bool is_rref = false;
@@ -19,6 +20,7 @@ namespace NLEngine
 		struct remove_reference<T&>
 		{
 			using type = typename T;
+			using refToPtr = typename T*;
 			static constexpr bool is_reference = true;
 			static constexpr bool is_lref = true;
 			static constexpr bool is_rref = false;
@@ -28,6 +30,7 @@ namespace NLEngine
 		struct remove_reference<T&&>
 		{
 			using type = typename T;
+			using refToPtr = typename T*;
 			static constexpr bool is_reference = true;
 			static constexpr bool is_lref = false;
 			static constexpr bool is_rref = true;

@@ -4,6 +4,7 @@
 #include <optional>
 #include "Void.h"
 #include <vector>
+#include <unordered_map>
 #include "Any.h"
 #include "NReflectionCoreAPI.h"
 
@@ -65,7 +66,9 @@ namespace NLEngine
 	class NREFLECTIONCORE_API CClassInfoBase
 	{
 	public:
+		CClassInfoBase() = default;
 		virtual ~CClassInfoBase();
+		virtual void PostConstructorProcess();
 		std::map<const CClassBase*, const CParentClassBase*> ParentClasses_;
 		std::vector<const CParentClassBase*> DirectParentClasses_;
 		std::vector<CMemberVariableBase*> MemberVariable_;
@@ -73,6 +76,11 @@ namespace NLEngine
 		std::vector<CMemberFunctionContainerBase*> MemberFunc_;
 		std::vector<CStaticFunctionContainerBase*> StaticFunc_;
 		std::vector<CStaticFunctionContainerBase*> CreateFunc_;
+
+		std::unordered_map<std::string,CMemberVariableBase*> MemberVariableMap_;
+		std::unordered_map<std::string,CStaticVariableBase*> StaticVariableMap_;
+		std::unordered_map<std::string, CMemberFunctionContainerBase*> MemberFuncMap_;
+		std::unordered_map<std::string, CStaticFunctionContainerBase*> StaticFuncMap_;
 	};
 
 

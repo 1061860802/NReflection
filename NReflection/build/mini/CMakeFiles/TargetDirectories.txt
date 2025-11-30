@@ -1,0 +1,7 @@
+D:/cpp/NReflection/build/mini/CMakeFiles/NReflectionCore.dir
+D:/cpp/NReflection/build/mini/CMakeFiles/NReflectionExe.dir
+D:/cpp/NReflection/build/mini/CMakeFiles/edit_cache.dir
+D:/cpp/NReflection/build/mini/CMakeFiles/rebuild_cache.dir
+D:/cpp/NReflection/build/mini/CMakeFiles/list_install_components.dir
+D:/cpp/NReflection/build/mini/CMakeFiles/install.dir
+D:/cpp/NReflection/build/mini/CMakeFiles/install/local.dir

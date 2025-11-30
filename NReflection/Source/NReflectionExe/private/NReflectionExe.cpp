@@ -1,6 +1,8 @@
 #include <iostream>
 #include "BaseNumeric.h"
 #include "ClassFactory.h"
+#include "EnumFactory.h"
+#include "STLContainers.h"
 #include "Any.h"
 #include "Array.h"
 #include "MemberFunction.h"
@@ -118,10 +120,30 @@ struct MyStructC : public MyStruct
         }
         return aaaCCC;
     }
-    static void StaticFuncTest2(float& cc, double ca)
+    static int Gl;
+    virtual float& TestFunc3(float& cc, int ca)
+    {
+        cc = 10236;
+        for (size_t i = 0; i < 10; i++)
+        {
+            if (ca == i)
+            {
+                cc = i;
+                Gl += i;
+                ArrayTest[i]++;
+            }
+            else
+            {
+                ArrayTest[i] = i;
+            }
+        }
+        return aaaCCC;
+    }
+    static float& StaticFuncTest2(float& cc, double ca)
     {
         cc = 19198;
         std::cout << "StaticFuncTest2:" << cc << std::endl;
+        return cc;
     }
     float ArrayTest[10];
     static void RegisterStruct()
@@ -132,11 +154,14 @@ struct MyStructC : public MyStruct
             .ApplyConstructor<>()
             .ApplyFunction(&MyStructC::StaticFuncTest2, "StaticFuncTest2")
             .ApplyFunction(&MyStructC::TestFunc1,"TestFunc1")
+            .ApplyFunction(&MyStructC::TestFunc3, "TestFunc3")
             .ApplyVariable(&MyStructC::ArrayTest, "ArrayTest");
         return;
     }
 };
 PARENTS(MyStructC, MyStruct)
+
+int MyStructC::Gl = 0;
 
 class CMemberVariableMetaTest : public NLEngine::CMemberVariableMetaBase
 {
@@ -197,6 +222,14 @@ int& TestFunc(int& TTT) { return aaa; };
 
 float MyStruct::ttt = 114514;
 
+enum class MyEnum : char
+{
+    aaa,
+    bbb,
+    ccc,
+    ddd,
+};
+
 int main()
 {
     MyStruct::RegisterStruct();
@@ -220,9 +253,23 @@ int main()
         std::cout << i->GetOwnerPtr()->GetTypeName() << "::" << i->GetName() << "   " << i->GetType().GetTypeName() << std::endl;
     }
     InterfaceTest* CPtr = NLEngine::GetStaticType<MyStructD>()->Create<InterfaceTest>();
+
     auto* bkptr = NLEngine::GetStaticType<MyStruct>();
     float t = 0;
-    T.GetMemberFunction("TestFunc1")->CallFunc(CPtr,t,12.0);
+    auto ret = T.GetStaticFunction("StaticFuncTest2")->CallFuncWithRet<float&>(t,12.0);
+    if (ret)
+    {
+        t = 12341;
+        float* fret = *ret;
+        std::cout << std::endl;
+    }
+    auto* Func = T.GetMemberFunction("TestFunc3");
+    MyStructC* MyStructCPtr = dynamic_cast<MyStructC*>(CPtr);
+    for (size_t i = 0; i < 1000000; i++)
+    {
+        //MyStructCPtr->TestFunc3(t, int(9));
+        Func->CallFuncWithRet<float&>(MyStructCPtr, t, int(9));
+    }
     auto arrayrow = T.GetMemberVariable("ArrayTest")->GetVariablePtr<float[10]>(CPtr);
     (*arrayrow)[8] = 0;
     auto array = T.GetMemberVariable("ArrayTest")->GetVariablePtrConst<float[10]>(CPtr);
@@ -230,9 +277,19 @@ int main()
     {
         std::cout << (*array)[i] << std::endl;
     }
+    std::cout << std::endl;
     auto val = T.GetMemberVariable("f1")->GetVariablePtrConst<double>(CPtr);
     std::cout << (*val) << std::endl;
     auto staticVal = T.GetStaticVariable("ttt")->GetPtr<float>();
     std::cout << (*staticVal) << std::endl;
+    auto* vectorT = NLEngine::GetStaticType<std::map<double,int>>();
+
+    std::map<double, int> testMap;
+    auto* mapFunc = vectorT->GetMemberFunction("insert");
+    mapFunc->CallFunc(&testMap, std::pair<const double, int>(1.0, 10));
+    auto& EnumType = NLEngine::Register<MyEnum>().Info();
+    EnumType.ApplyEnumerator(MyEnum::aaa, "aaa").ApplyEnumerator(MyEnum::bbb, "bbb");
+    MyEnum tEvalue = *static_cast<const MyEnum*>(EnumType.GetEnumerator("bbb")->GetEnumeratorPtr());
+    std::cout << MyStructC::Gl;
     return 0;
 }

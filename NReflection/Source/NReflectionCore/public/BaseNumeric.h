@@ -95,6 +95,34 @@ namespace NLEngine
 	};
 
 	template<>
+	struct TTypeName<char>
+	{
+		static constexpr char Name[] = "char";
+		inline static const auto RealName = typeid(char).name();
+	};
+
+	class CChar : public CNumeric
+	{
+	public:
+		using Type_ = char;
+		CChar() : CNumeric(TTypeName<Type_>::Name, TTypeName<Type_>::RealName, typeid(Type_), sizeof(Type_)) {};
+	};
+
+	template<>
+	struct TGetTypeInfo<CChar>
+	{
+		using Type_ = CChar;
+		static constexpr size_t Size = sizeof(char);
+	};
+
+	template<>
+	class TFactoryGetter<char>
+	{
+	public:
+		using GetFactory = TNumericFactory<CChar>;
+	};
+
+	template<>
 	struct TTypeName<int8_t>
 	{
 		static constexpr char Name[] = "int8";

@@ -23,6 +23,7 @@ namespace NLEngine
 				i->AttachedtoType(this);
 			}
 		};
+		void PostConstructorProcess() {};
 		CType(const CType&) = delete;
 		const std::string& GetTypeName() const { return name_; };
 		const std::string& GetRealName() const { return realname_; };
@@ -124,11 +125,6 @@ namespace NLEngine
 	};
 
 	class NREFLECTIONCORE_API CFunction : public CType
-	{
-	public:
-	};
-
-	class NREFLECTIONCORE_API CEnum : public CType
 	{
 	public:
 	};

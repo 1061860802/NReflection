@@ -1,7 +1,6 @@
 #pragma once
 #include "Type.h"
 #include "ClassBase.h"
-#include "ClassBase.h"
 #include "MemberVariable.h"
 #include "StaticVariable.h"
 #include "MemberFunction.h"
@@ -171,19 +170,39 @@ namespace NLEngine
 	{
 	};
 
+	template<typename TClassT>
+	struct PostConstructorProcessUtility
+	{
+		PostConstructorProcessUtility() = delete;
+		static void PostConstructorProcess(TClassT* IN_Class, TClassInfo<typename TClassT::ClassT_>* IN_ClassInfo)
+		{
+		}
+	};
+
 	template<typename T>
-	class TClass : public CClassBase
+	class TClass final : public CClassBase
 	{
 	public:
 		using ClassT_ = typename T;
 		TClass() :CClassBase(TTypeName<ClassT_>::Name, typeid(T).name(), typeid(T), sizeof(ClassT_))
 		{
-			CClassInfoBase* NewInfo = new TClassInfo<ClassT_>;
+			TClassInfo<ClassT_>* NewInfo = new TClassInfo<ClassT_>;
 			SetClassInfo(NewInfo);
 			NLEG_ClassParentsHelper_T<ClassT_>::ParentClassesGenHelper<ClassT_>(Info->ParentClasses_);
 			NLEG_ClassParentsHelper_T<ClassT_>::DirectParentClassesGenHelper<ClassT_>(Info->DirectParentClasses_);
 		}
+		void PostConstructorProcess()
+		{
+			if (BuildCalled == false)
+			{
+				BuildCalled = true;
+				TClassInfo<ClassT_>* NewInfo = static_cast<TClassInfo<ClassT_>*>(Info);
+				PostConstructorProcessUtility<TClass<ClassT_>>::PostConstructorProcess(this, NewInfo);
+				Info->PostConstructorProcess();
+			}
+		}
 	public:
+		bool BuildCalled = false;
 		virtual bool BableToBinary() const override
 		{
 			if constexpr (std::is_trivially_copyable_v<T>)
@@ -219,7 +238,7 @@ namespace NLEngine
 		{
 			if (VarPtr == nullptr) return *this;
 			constexpr bool IsFunc = VReflectionTraits::function_traits<VariableT*>::is_func;
-			static_assert(!IsFunc, "Input Isnot Variable");
+			static_assert(!IsFunc, "Input Is not Variable");
 			auto aaaaa = VarPtr;
 			using MemberPtrType_ = VariableT ClassT_::*;
 			using ValueType_ = typename VReflectionTraits::remove_const<typename VReflectionTraits::variable_traits<MemberPtrType_>::return_type>::type;
@@ -228,6 +247,7 @@ namespace NLEngine
 			const TVariableTypeContainer Type_container_(GetType<ValueType_>(), IsConst);
 			CMemberVariableBase* MemberVariablePtr = new TMemberVariable<VariableT ClassT_::*>(VarPtr, Type_container_, Name, IN_Metas);
 			Info->MemberVariable_.push_back(MemberVariablePtr);
+			Info->MemberVariableMap_.emplace(MemberVariablePtr->GetName(), MemberVariablePtr);
 			return *this;
 		}
 		template<typename VariableT, size_t In_Size>
@@ -235,7 +255,7 @@ namespace NLEngine
 		{
 			if (VarPtr == nullptr) return *this;
 			constexpr bool IsFunc = VReflectionTraits::function_traits<VariableT*>::is_func;
-			static_assert(!IsFunc, "Input Isnot Variable");
+			static_assert(!IsFunc, "Input Is not Variable");
 			auto aaaaa = VarPtr;
 			using MemberPtrType_ = VariableT(ClassT_::*)[In_Size];
 			using ValueType_ = typename VReflectionTraits::remove_const<typename VReflectionTraits::variable_traits<MemberPtrType_>::return_type>::type;
@@ -245,6 +265,7 @@ namespace NLEngine
 			auto& I = GetType<ValueType_>();
 			CMemberVariableBase* MemberVariablePtr = new TMemberVariable<VariableT(ClassT_::*)[In_Size]>(VarPtr, Type_container_, Name, IN_Metas);
 			Info->MemberVariable_.push_back(MemberVariablePtr);
+			Info->MemberVariableMap_.emplace(MemberVariablePtr->GetName(), MemberVariablePtr);
 			return *this;
 		}
 		template<typename VariableT>
@@ -252,9 +273,10 @@ namespace NLEngine
 		{
 			if (Var == nullptr) return *this;
 			constexpr bool IsFunc = VReflectionTraits::function_traits<VariableT*>::is_func;
-			static_assert(!IsFunc, "Input Isnot Variable");
+			static_assert(!IsFunc, "Input Is not Variable");
 			CStaticVariableBase& Variable = RegisterStaticVariable<VariableT>(*Var, Name, this, IN_Metas);
 			Info->StaticVariable_.push_back(&Variable);
+			Info->StaticVariableMap_.emplace(Variable.GetName(), &Variable);
 			return *this;
 		}
 		template<typename Ret, typename... Params>
@@ -264,6 +286,7 @@ namespace NLEngine
 			CMemberFunctionBase& FuncType = GetType<Ret(ClassT_::*)(Params...)>();
 			CMemberFunctionContainerBase* MemberFuncPtr = new TMemberFunctionContainer<Ret, ClassT_, Params...>(FuncPtr, this, FuncType, Name, IN_Metas);
 			Info->MemberFunc_.push_back(MemberFuncPtr);
+			Info->MemberFuncMap_.emplace(MemberFuncPtr->GetName(), MemberFuncPtr);
 			return *this;
 		}
 		template<typename Ret, typename... Params>
@@ -273,6 +296,7 @@ namespace NLEngine
 			CMemberFunctionBase& FuncType = GetType<Ret(ClassT_::*)(Params...) const>();
 			CMemberFunctionContainerBase* MemberFuncPtr = new TMemberFunctionContainerConst<Ret, ClassT_, Params...>(FuncPtr, this, FuncType, Name, IN_Metas);
 			Info->MemberFunc_.push_back(MemberFuncPtr);
+			Info->MemberFuncMap_.emplace(MemberFuncPtr->GetName(), MemberFuncPtr);
 			return *this;
 		}
 		template<typename Ret, typename... Params>
@@ -282,6 +306,7 @@ namespace NLEngine
 			FStaticFunctionBase& FuncType = GetType<Ret(*)(Params...)>();
 			CStaticFunctionContainerBase* MemberFuncPtr = new TStaticFunctionContainer<Ret, ClassT_, Params...>(FuncPtr, this, FuncType, Name, IN_Metas);
 			Info->StaticFunc_.push_back(MemberFuncPtr);
+			Info->StaticFuncMap_.emplace(MemberFuncPtr->GetName(), MemberFuncPtr);
 			return *this;
 		}
 		template<typename... Params>

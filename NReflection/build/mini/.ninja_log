@@ -1,0 +1,23 @@
+# ninja log v6
+10	42	7861916627842799	CMakeFiles/NReflectionCore.dir/Source/NReflectionCore/private/NReflectionCore.cpp.obj	6f14b83b2bf26af
+4	622	7861916627792796	CMakeFiles/NReflectionCore.dir/Source/NReflectionCore/private/ClassBase.cpp.obj	8fde0e91ee787e67
+16	1430	7861916627912796	CMakeFiles/NReflectionExe.dir/Source/NReflectionExe/private/NReflectionExe.cpp.obj	542138fa2d0998ad
+7	415	7861916627822796	CMakeFiles/NReflectionCore.dir/Source/NReflectionCore/private/EnumBase.cpp.obj	56dc79b4dce8ba88
+12	421	7861916627862796	CMakeFiles/NReflectionCore.dir/Source/NReflectionCore/private/Type.cpp.obj	28c6df401292c927
+14	603	7861916627882796	CMakeFiles/NReflectionCore.dir/Source/NReflectionCore/private/TypeManager.cpp.obj	4f81a83ac4029a9a
+622	942	7861916634873490	D:/cpp/NReflection/Mini/binarys/NReflectionCore.dll	f4852bdb57c7781c
+622	942	7861916634873490	D:/cpp/NReflection/Mini/archive/NReflectionCore.lib	f4852bdb57c7781c
+1430	1749	7861916642042725	D:/cpp/NReflection/Mini/binarys/NReflectionExe.exe	4fe25ada463d2a3a
+25	393	7861916648597117	CMakeFiles/install.util	fd3db5fd7b31c11c
+7	586	7861931485237882	CMakeFiles/NReflectionCore.dir/Source/NReflectionCore/private/TypeManager.cpp.obj	4f81a83ac4029a9a
+5	607	7861931485207825	CMakeFiles/NReflectionCore.dir/Source/NReflectionCore/private/ClassBase.cpp.obj	8fde0e91ee787e67
+30	391	7861937348080668	CMakeFiles/NReflectionCore.dir/Source/NReflectionCore/private/EnumBase.cpp.obj	56dc79b4dce8ba88
+29	350	7861937419992685	D:/cpp/NReflection/Mini/binarys/NReflectionCore.dll	f4852bdb57c7781c
+29	350	7861937419992685	D:/cpp/NReflection/Mini/archive/NReflectionCore.lib	f4852bdb57c7781c
+21	1374	7861937925042731	CMakeFiles/NReflectionExe.dir/Source/NReflectionExe/private/NReflectionExe.cpp.obj	542138fa2d0998ad
+1374	1685	7861937938565502	D:/cpp/NReflection/Mini/binarys/NReflectionExe.exe	4fe25ada463d2a3a
+27	547	7861937945128369	CMakeFiles/install.util	fd3db5fd7b31c11c
+4	1392	7861940441023633	CMakeFiles/NReflectionExe.dir/Source/NReflectionExe/private/NReflectionExe.cpp.obj	542138fa2d0998ad
+1392	1707	7861940454904911	D:/cpp/NReflection/Mini/binarys/NReflectionExe.exe	4fe25ada463d2a3a
+25	350	7861940461302874	CMakeFiles/install.util	fd3db5fd7b31c11c
+3	261	7861940535540546	CMakeFiles/install.util	fd3db5fd7b31c11c

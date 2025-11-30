@@ -42,10 +42,11 @@ if(ACTIVATE_MOD_NReflectionCore)
     target_sources(NReflectionCore
         PRIVATE
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/Source/NReflectionCore/private/ClassBase.cpp>
+            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/Source/NReflectionCore/private/EnumBase.cpp>
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/Source/NReflectionCore/private/NReflectionCore.cpp>
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/Source/NReflectionCore/private/Type.cpp>
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/Source/NReflectionCore/private/TypeManager.cpp>
-     "Source/NReflectionCore/public/TypeMeta.h" "Source/NReflectionCore/public/ClassMember.h" "Source/NReflectionCore/public/StaticMember.h" "Source/NReflectionCore/public/MemberFunctionMeta.h" "Source/NReflectionCore/public/MemberVariableMeta.h" "Source/NReflectionCore/public/StaticFunctionMeta.h" "Source/NReflectionCore/public/StaticVariableMeta.h")
+     "Source/NReflectionCore/public/Enumerator.h" "Source/NReflectionCore/public/EnumeratorMeta.h")
     target_include_directories(NReflectionCore
         PUBLIC
             $<INSTALL_INTERFACE:include/NReflectionCore/public>
@@ -78,7 +79,7 @@ if(ACTIVATE_MOD_NReflectionExe)
     target_sources(NReflectionExe
         PRIVATE
             $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/Source/NReflectionExe/private/NReflectionExe.cpp>
-     "Source/NReflectionCore/public/TypeMeta.h" "Source/NReflectionCore/public/ClassMember.h" "Source/NReflectionCore/public/StaticMember.h" "Source/NReflectionCore/public/MemberFunctionMeta.h" "Source/NReflectionCore/public/MemberVariableMeta.h" "Source/NReflectionCore/public/StaticFunctionMeta.h" "Source/NReflectionCore/public/StaticVariableMeta.h")
+     "Source/NReflectionCore/public/Enumerator.h" "Source/NReflectionCore/public/EnumeratorMeta.h")
     target_include_directories(NReflectionExe
         PUBLIC
             $<INSTALL_INTERFACE:include/NReflectionExe/public>

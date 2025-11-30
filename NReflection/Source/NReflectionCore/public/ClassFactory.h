@@ -15,7 +15,11 @@ namespace NLEngine
 			ClassFactory* instPtr = &inst;
 			return inst;
 		}
-		TClass<Type_T>& Info() { return *info_; }
+		TClass<Type_T>& Info() 
+		{ 
+			info_->PostConstructorProcess();
+			return *info_;
+		}
 	private:
 		typename TClass<Type_T>* info_;
 		ClassFactory()
